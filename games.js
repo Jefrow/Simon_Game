@@ -54,6 +54,14 @@ function animatePress(currentColour){ //create a new function animatedPressed() 
 
 var started = false;                //states that the game has not started yet. 
 
+$(document).click(function(){    //start the game by clicking anywhere on the blue screen. 
+    if(!started){                                       //used if state ment to make sure that the game starts with only one keypress. 
+        $("#level-title").text("Level " + level);      
+        nextSequence();
+        started=true;
+    }
+})
+
 $(document).keypress(function(){       //EventListener to detect keydown events. Reveiew section!!!!!!
     
     if(!started){                                       //used if state ment to make sure that the game starts with only one keypress. 
