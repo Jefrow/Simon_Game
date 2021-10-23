@@ -1,13 +1,11 @@
 let buttonColours = ['red', 'blue', 'green', 'yellow'];
-
 let userClickPattern = [];
-
 let gamePattern = []; 
+let Levels = [];
+
 var level = 0;
-
 var started = false;                //states that the game has not started yet. 
 
-var started = false;                //states that the game has not started yet. 
 function startGame(){
     if(!started){                                       //used if state ment to make sure that the game starts with only one keypress. 
         $("#level-title").text("Level " + level);      
@@ -15,12 +13,12 @@ function startGame(){
         started=true;
     }
 }
-//Event Listener to start the game by clicking on the body. 
-$(document).keydown(function(){
+
+$(document).keydown(function(){         //Event Listener to start the game by pressing keyboard.
     startGame();
 })
 
-$(".startBtn").click(function(){       //EventListener to detect keydown events. Reveiew section!!!!!!
+$(".startBtn").click(function(){       //EventListener to start the game by clicking on title. 
     startGame();
 });
 
@@ -49,6 +47,9 @@ function nextSequence (){
     $("#level-title").text("Level " + level);
     
     console.log(gamePattern);
+    
+    Levels.push(level);
+    console.log(Levels);
 }
 
 
@@ -95,7 +96,10 @@ function checkAnswer(currentLevel){
         audio.play();
         $('body').addClass("game-over");            //turn the background red.
         $("#level-title").text("Game Over, Press here or any key to Restart");   //changes from current level to "Game Ove, Press any key to restart"
-        $(".highestLevel").text("Best "+level);
+        $(".highestLevel").text("Best: " + Math.max(...Levels));
+        
+        console.log("Highscore: " + Math.max(...Levels));
+        
         setTimeout(function(){
             $('body').removeClass("game-over");     //remove red background. 
         },200);
