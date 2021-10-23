@@ -95,7 +95,7 @@ function checkAnswer(currentLevel){
         var audio = new Audio('sounds/wrong.mp3');      //play the "wrong" audio. 
         audio.play();
         $('body').addClass("game-over");            //turn the background red.
-        $("#level-title").text("Game Over, Press here or any key to Restart");   //changes from current level to "Game Ove, Press any key to restart"
+        $("#level-title").text("Game Over, Click here or any key to Restart");   //changes from current level to "Game Ove, Press any key to restart"
         $(".highestLevel").text("Best: " + Math.max(...Levels));
         
         console.log("Highscore: " + Math.max(...Levels));
