@@ -88,6 +88,7 @@ function checkAnswer(currentLevel){
         audio.play();
         $('body').addClass("game-over");            //turn the background red.
         $("#level-title").text("Game Over, Press here or any key to Restart");   //changes from current level to "Game Ove, Press any key to restart"
+        $(".highestLevel").text("Highest Level "+level);
         setTimeout(function(){
             $('body').removeClass("game-over");     //remove red background. 
         },200);
