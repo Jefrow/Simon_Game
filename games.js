@@ -77,7 +77,7 @@ function checkAnswer(currentLevel){
              
             setTimeout(function(){    //if they are, then the game will call the next secquence function after a 10000millisecond delay. 
                 nextSequence();
-            },10000);
+            },1000);
             userClickPattern = [];  //resets userclickPattern[] after every level. 
             console.log(userClickPattern); 
         }
