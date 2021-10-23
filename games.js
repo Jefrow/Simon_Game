@@ -7,14 +7,21 @@ var level = 0;
 
 var started = false;                //states that the game has not started yet. 
 
-//Event Listener to start the game by clicking on the body. 
-
-$(".startBtn").click(function(){       //EventListener to detect keydown events. Reveiew section!!!!!!
+var started = false;                //states that the game has not started yet. 
+function startGame(){
     if(!started){                                       //used if state ment to make sure that the game starts with only one keypress. 
         $("#level-title").text("Level " + level);      
         nextSequence();
         started=true;
     }
+}
+//Event Listener to start the game by clicking on the body. 
+$(document).keydown(function(){
+    startGame();
+})
+
+$(".startBtn").click(function(){       //EventListener to detect keydown events. Reveiew section!!!!!!
+    startGame();
 });
 
 
