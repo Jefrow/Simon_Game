@@ -87,7 +87,7 @@ function checkAnswer(currentLevel){
         var audio = new Audio('sounds/wrong.mp3');      //play the "wrong" audio. 
         audio.play();
         $('body').addClass("game-over");            //turn the background red.
-        $("#level-title").text("Game Over, Press to Restart");   //changes from current level to "Game Ove, Press any key to restart"
+        $("#level-title").text("Game Over, Press here or any key to Restart");   //changes from current level to "Game Ove, Press any key to restart"
         setTimeout(function(){
             $('body').removeClass("game-over");     //remove red background. 
         },200);
